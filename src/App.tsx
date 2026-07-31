@@ -7,13 +7,15 @@ import type { InferenceResponse } from './types/inference'
 function App() {
   const [result, setResult] = useState<InferenceResponse | null>(null)
   return (
-    <main>
-      <h1>Pizza Steak Sushi Predictor</h1>
-      <ImageUploader onResult={setResult} />
+    <main className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
+        <h1 className="text-4xl font-bold text-center mb-8">Pizza Steak Sushi Predictor</h1>
+        <ImageUploader onResult={setResult} />
 
-      {result && (
-        <InferenceResult label={result.result.class_name} confidence={result.result.confidence} />
-      )}
+        {result && (
+          <InferenceResult label={result.result.class_name} confidence={result.result.confidence} />
+        )}
+      </div>
     </main>
   )
 }

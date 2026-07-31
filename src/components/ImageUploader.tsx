@@ -39,7 +39,7 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
 
       onResult(result)
     } catch (err) {
-      const message = err instanceof Error ? err.message : ' An unexpected error occurred.'
+      const message = err instanceof Error ? err.message : 'An unexpected error occurred.'
       setError(message)
     } finally {
       setLoading(false)
@@ -47,21 +47,89 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
   }
 
   return (
-    <section>
-      <input type="file" accept="image/*" onChange={handleFileChange} />
+    <section className="space-y-6">
+      <div className="rounded-xl border-2 border-dashed border-gray-300 p-6 text-center transition hover:border-blue-400">
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleFileChange}
+          className="
+          block
+          w-full
+          text-sm
+          text-gray-600
+          file:mr-4
+          file:rounded-lg
+          file:border-0
+          file:bg-blue-50
+          file:px-4
+          file:py-2
+          file:font-semibold
+          file:text-blue-700
+          hover:file:bg-blue-100
+        "
+        />
+      </div>
 
       {file && (
-        <div className="image-preview">
-          <p>Selected: {file.name}</p>
+        <div className="space-y-4 rounded-xl bg-gray-50 p-5">
+          <p className="text-sm text-gray-600">
+            Selected:
+            <span className="ml-2 font-medium text-gray-900">{file.name}</span>
+          </p>
 
-          {previewUrl && <img src={previewUrl} alt="Selected image preview" />}
+          {previewUrl && (
+            <div className="flex justify-center">
+              <img
+                src={previewUrl}
+                alt="Selected image preview"
+                className="
+                max-h-72
+                rounded-xl
+                object-contain
+                shadow-md
+              "
+              />
+            </div>
+          )}
         </div>
       )}
 
-      <button type="button" disabled={!file || loading} onClick={handleSubmit}>
+      <button
+        type="button"
+        disabled={!file || loading}
+        onClick={handleSubmit}
+        className="
+        w-full
+        rounded-xl
+        bg-blue-600
+        px-6
+        py-3
+        font-semibold
+        text-white
+        shadow
+        transition
+        hover:bg-blue-700
+        disabled:cursor-not-allowed
+        disabled:opacity-50
+      "
+      >
         {loading ? 'Running...' : 'Make Prediction'}
       </button>
-      {error && <p role="alert">{error}</p>}
+      {error && (
+        <p
+          role="alert"
+          className="
+          rounded-lg
+          bg-red-50
+          p-4
+          text-sm
+          text-red-700
+        "
+        >
+          {error}
+        </p>
+      )}
     </section>
   )
 }
