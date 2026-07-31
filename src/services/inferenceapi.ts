@@ -1,8 +1,6 @@
-import type { InferenceResponse } from "../types/inference";
+import type { InferenceResponse } from '../types/inference'
 
-export async function runInference(
-  file: File,
-): Promise<InferenceResponse> {
+export async function runInference(file: File): Promise<InferenceResponse> {
   const formData = new FormData()
 
   // the parameter has to be named the same as what's expected in our fastapi
@@ -14,10 +12,8 @@ export async function runInference(
     body: formData,
   })
 
-  if(!response.ok) {
-    throw new Error(
-      `Inference request failed: ${response.status}`
-    )
+  if (!response.ok) {
+    throw new Error(`Inference request failed: ${response.status}`)
   }
   return response.json()
 }

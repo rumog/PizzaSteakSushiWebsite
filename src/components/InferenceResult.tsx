@@ -15,24 +15,17 @@ function getPredictionEmoji(label: string): string {
       return '🍽️'
   }
 }
-export function InferenceResult({
-  label,
-  confidence,
-}: InferenceResultProps) {
-  const confidencePercent = 
-    (confidence * 100).toFixed(1)
-  
-    const emoji =
-    getPredictionEmoji(label)
-  return(
+export function InferenceResult({ label, confidence }: InferenceResultProps) {
+  const confidencePercent = (confidence * 100).toFixed(1)
+
+  const emoji = getPredictionEmoji(label)
+  return (
     <section className="prediction-card">
       <h2>
         Prediction: {emoji} {label}!
       </h2>
       <p>
-        Confidence:
-        {' '}
-        <strong>{confidencePercent}%</strong>
+        Confidence: <strong>{confidencePercent}%</strong>
       </p>
     </section>
   )
