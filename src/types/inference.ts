@@ -4,3 +4,9 @@ export interface InferenceResponse {
     confidence: number
   }
 }
+
+export interface InferenceGetClassListResponse {
+  result: {
+    class_list: string[]
+  }
+}

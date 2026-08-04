@@ -1,4 +1,4 @@
-import type { InferenceResponse } from '../types/inference'
+import type { InferenceResponse, InferenceGetClassListResponse } from '../types/inference'
 
 export async function runInference(file: File): Promise<InferenceResponse> {
   const formData = new FormData()
@@ -10,6 +10,17 @@ export async function runInference(file: File): Promise<InferenceResponse> {
   const response = await fetch('/api/predict', {
     method: 'POST',
     body: formData,
+  })
+
+  if (!response.ok) {
+    throw new Error(`Inference request failed: ${response.status}`)
+  }
+  return response.json()
+}
+
+export async function getClassList(): Promise<InferenceGetClassListResponse> {
+  const response = await fetch('/api/predict', {
+    method: 'GET',
   })
 
   if (!response.ok) {
