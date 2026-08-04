@@ -5,12 +5,26 @@ interface InferenceResultProps {
 
 function getPredictionEmoji(label: string): string {
   switch (label.toLowerCase()) {
+    case 'gyoza':
+      return '🥟'
+    case 'ice_cream':
+      return '🍨'
+    case 'nachos':
+      return '🧀' // closest available; no official nachos emoji
+    case 'pancakes':
+      return '🥞'
     case 'pizza':
       return '🍕'
-    case 'sushi':
-      return '🍣'
+    case 'ramen':
+      return '🍜'
     case 'steak':
       return '🥩'
+    case 'sushi':
+      return '🍣'
+    case 'takoyaki':
+      return '🐙' // closest available; no official takoyaki emoji
+    case 'waffles':
+      return '🧇'
     default:
       return '🍽️'
   }
