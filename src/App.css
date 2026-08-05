@@ -1,14 +1,6 @@
 #root {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
+  min-height: 100vh;
 }
-
-
-main {
-  text-align: center;
-}
-
 
 .prediction-card {
   margin-top: 2rem;

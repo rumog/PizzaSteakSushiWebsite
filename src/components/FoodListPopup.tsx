@@ -14,7 +14,20 @@ export function FoodListPopup({ foods, open, onClose }: FoodListPopupProps) {
       {/* clicking outside closes */}
       <div className="fixed inset-0 bg-black/30 z-40" onClick={onClose} />
 
-      <section className="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-80 rounded-xl bg-white shadow-2xl">
+      <section
+        className="
+          fixed
+          top-20
+          left-1/2
+          -translate-x-1/2
+          z-50
+          w-[90vw]
+          max-w-sm
+          rounded-xl
+          bg-white
+          shadow-2xl
+        "
+      >
         <div
           className="
           flex 

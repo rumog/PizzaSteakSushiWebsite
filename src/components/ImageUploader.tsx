@@ -73,9 +73,19 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
 
       {file && (
         <div className="space-y-4 rounded-xl bg-gray-50 p-5">
-          <p className="text-sm text-gray-600">
+          <p className="flex items-center gap-2 text-sm text-gray-600">
             Selected:
-            <span className="ml-2 font-medium text-gray-900">{file.name}</span>
+            <span
+              className="
+                font-medium
+                text-gray-900
+                truncate
+                max-w-[140px]
+                sm:max-w-md
+              "
+            >
+              {file.name}
+            </span>
           </p>
 
           {previewUrl && (
@@ -84,11 +94,10 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
                 src={previewUrl}
                 alt="Selected image preview"
                 className="
-                max-h-72
-                rounded-xl
-                object-contain
-                shadow-md
-              "
+                  max-w-full
+                  max-h-72
+                  object-contain
+                "
               />
             </div>
           )}

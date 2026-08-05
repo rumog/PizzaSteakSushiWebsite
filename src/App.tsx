@@ -26,8 +26,32 @@ function App() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-gradient-to-tl from-orange-100 via-amber-100 to-rose-100 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl bg-white rounded-3xl shadow-lg p-8">
+    <main
+      className="
+        min-h-screen
+        bg-gradient-to-tl
+        from-orange-100
+        via-amber-100
+        to-rose-100
+        flex
+        items-center
+        justify-center
+        p-4
+        sm:p-6
+      "
+    >
+      <div
+        className="
+            w-full
+            max-w-xl
+            rounded-2xl
+            bg-white
+            shadow-lg
+            p-4
+            sm:p-6
+            md:p-8
+          "
+      >
         <h1 className="text-4xl font-bold text-center mb-8">Tiny Food Predictor</h1>
         <ImageUploader onResult={setResult} />
         <button
