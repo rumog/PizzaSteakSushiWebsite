@@ -61,12 +61,12 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
           file:mr-4
           file:rounded-lg
           file:border-0
-          file:bg-blue-50
+          file:bg-stone-200
           file:px-4
           file:py-2
           file:font-semibold
-          file:text-blue-700
-          hover:file:bg-blue-100
+          file:text-rose-900
+          hover:file:bg-stone-300
         "
         />
       </div>
@@ -102,14 +102,14 @@ export function ImageUploader({ onResult }: ImageUploaderProps) {
         className="
         w-full
         rounded-xl
-        bg-blue-600
+        bg-rose-700
         px-6
         py-3
         font-semibold
         text-white
         shadow
         transition
-        hover:bg-blue-700
+        hover:bg-rose-700
         disabled:cursor-not-allowed
         disabled:opacity-50
       "

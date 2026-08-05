@@ -10,7 +10,7 @@ export function InferenceResult({ label, confidence }: InferenceResultProps) {
 
   const emoji = getPredictionEmoji(label)
   return (
-    <section className="prediction-card">
+    <section className="mt-8 p-6 rounded-xl bg-stone-100 border border-rose-200">
       <h2>
         Prediction: {emoji} {label}!
       </h2>

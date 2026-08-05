@@ -15,7 +15,16 @@ export function FoodListPopup({ foods, open, onClose }: FoodListPopupProps) {
       <div className="fixed inset-0 bg-black/30 z-40" onClick={onClose} />
 
       <section className="fixed top-20 left-1/2 -translate-x-1/2 z-50 w-80 rounded-xl bg-white shadow-2xl">
-        <div className="flex justify-between items-center border-b p-4">
+        <div
+          className="
+          flex 
+          justify-between 
+          items-center 
+          p-4
+          bg-orange-50
+          rounded-t-xl
+        "
+        >
           <h2 className="text-lg font-bold">Foods I Can Predict:</h2>
 
           <button onClick={onClose} className="text-xl hover:text-red-500" aria-label="Close">
